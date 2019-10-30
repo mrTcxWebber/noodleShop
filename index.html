@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./css/vant.css" />
+    <style>
+        body {
+            height: auto;
+            min-height: 100%;
+        }
+
+        #app {
+            padding-top: 46px;
+            padding-bottom: 50px;
+            position: relative;
+        }
+
+        .main {
+            padding: 0 12px;
+            overflow: hidden;
+        }
+
+        .header-bar {
+            align-items: center;
+            box-sizing: border-box;
+            z-index: 30;
+            background-color: #fff;
+        }
+
+        .header-inner {
+            padding: 8px 12px;
+        }
+
+        .header-bar .search-con {
+            height: 32px;
+            line-height: 32px;
+            border-radius: 8px;
+            background: #F2F2F2;
+            padding: 0 12px;
+            color: #7f7f7f;
+            align-items: center;
+        }
+
+        .header-bar .addr-con {
+            height: 32px;
+            line-height: 32px;
+            margin-right: 10px;
+            text-align: center;
+        }
+
+        .header-bar .addr-con span {
+            vertical-align: middle;
+        }
+
+        .header-bar .addr-con em {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-color: #BFBFBF transparent transparent;
+            border-width: 6px 6px 0;
+            vertical-align: middle;
+        }
+
+        .header-bar .link-item {
+            padding-top: 4px;
+        }
+
+        .header-bar .link-item a {
+            color: #BFBFBF;
+        }
+
+        footer {}
+
+        footer nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background-color: #fff;
+            border-top: 1px solid #FBFBFB;
+        }
+
+        footer a {
+            text-align: center;
+            color: #AAA;
+            font-size: 12px;
+            padding-top: 6px;
+        }
+
+        footer a.active {
+            color: #53BFC1;
+        }
+
+        footer img {
+            width: 23px;
+            height: 23px;
+            vertical-align: top;
+        }
+
+        footer p {
+            line-height: 20px;
+        }
+
+        .banner-box {
+            min-height: 130px;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .recommend-box {
+            padding-bottom: 3px;
+        }
+
+        .recommend-box .sec-head {
+            height: 30px;
+            margin-top: 7px;
+            line-height: 30px;
+        }
+
+        .recommend-box .sec-head i {
+            padding-right: 6px;
+        }
+
+        .recommend-box .r-list-item {
+            margin-right: 8px;
+        }
+
+        .recommend-box .r-list-item:last-child {
+            margin-right: 0px;
+        }
+
+        .recommend-box .r-list-item .img-box {
+            position: relative;
+        }
+
+        .recommend-box .r-list-item .img-box:after {
+            content: '';
+            display: block;
+            padding-top: 100%;
+        }
+
+        .recommend-box .r-list-item .img-box img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .r-list-item .info-box {
+            background-color: #fff;
+            padding: 3px 8px;
+            box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.06);
+        }
+
+        .r-list-item .info-box .name {
+            height: 22px;
+            line-height: 22px;
+            overflow: hidden;
+        }
+
+        .r-list-item .info-box .price-box {
+            line-height: 18px;
+            margin-top: 3px;
+            font-weight: normal;
+        }
+
+        .r-list-item .info-box .price-box i {
+            margin-left: auto;
+            margin-top: 2px;
+        }
+
+        .store-box {}
+
+        .store-box .s-list {
+            margin-top: 16px;
+        }
+
+        .store-box .s-list .s-pictrue {
+            width: 100%;
+            min-height: 100px;
+            height: auto;
+            border-radius: 6px;
+            object-fit: contain;
+            overflow: hidden;
+        }
+
+        .store-box .s-list:last-child .info-box {
+            border-bottom: none;
+        }
+
+        .s-list .info-box {
+            padding: 3px 0;
+            border-bottom: 1px #F2F2F2 solid;
+        }
+
+        .s-list .info-box .name {
+            line-height: 20px;
+            height: 20px;
+        }
+
+        .s-list .info-box .info-p {
+            line-height: 20px;
+        }
+
+        .s-list .info-box .info-p i {
+            margin-right: 5px;
+            vertical-align: -2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <div class="header-bar isFixed">
+                <div class="header-inner flex-wrap">
+                    <div class="addr-con">
+                        <a href="./changeCity.html">
+                            <span>全国</span>
+                            <em></em>
+                        </a>
+                    </div>
+                    <div class="search-con flex-con flex-wrap">
+                        <span class="flex-con">搜索店铺/商品</span>
+                        <img src='./image/ic_navbar_search.png' style="" alt="" width="18" height="18" />
+                    </div>
+                    <div class="link-item" style="margin: 0 3px 0 12px;">
+                        <a href="javascript:;">
+                            <van-icon name="scan" size="22px"></van-icon>
+                        </a>
+                    </div>
+                    <div class="link-item" style="margin: 0 3px 0 8px;">
+                        <a href="javascript:;">
+                            <van-icon name="qr" size="22px"></van-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="main">
+
+            <!-- banner -->
+            <div class="banner-box">
+                <van-swipe :autoplay="3000" indicator-color="#31C7C5">
+                    <van-swipe-item>
+                        <img src="./image/index-banner1.svg" width="100%" alt="" />
+                    </van-swipe-item>
+                    <van-swipe-item>
+                        <img src="./image/index-banner1.svg" width="100%" alt="" />
+                    </van-swipe-item>
+                </van-swipe>
+            </div>
+
+            <!-- 推荐 -->
+            <div class="recommend-box">
+                <div class="sec-head clearfix">
+                    <span class="fr color-blue"><van-icon name="replay" style="" size="16px" ></van-icon>换一换</span>
+                    <p>馆主推荐</p>
+                </div>
+                <div class="r-list flex-wrap">
+                    <div class="r-list-item flex-con">
+                        <div class="img-box"><img src="./image/g1.jpg" alt=""></div>
+                        <div class="info-box">
+                            <p class="name">碱水面碱水面碱水面碱水面碱水面</p>
+                            <div class="price-box flex-wrap">
+                                <strong class="color-blue">￥15</strong>
+                                <van-icon name="add-o" class="color-blue" size="14px"></van-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="r-list-item flex-con">
+                        <div class="img-box"><img src="./image/g1.jpg" alt=""></div>
+                        <div class="info-box">
+                            <p class="name">碱水面碱水面碱水面碱水面碱水面</p>
+                            <div class="price-box flex-wrap">
+                                <strong class="color-blue">￥15</strong>
+                                <van-icon name="add-o" class="color-blue" size="14px"></van-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="r-list-item flex-con">
+                        <div class="img-box"><img src="./image/g1.jpg" alt=""></div>
+                        <div class="info-box">
+                            <p class="name">碱水面碱水面碱水面碱水面碱水面</p>
+                            <div class="price-box flex-wrap">
+                                <strong class="color-blue">￥15</strong>
+                                <van-icon name="add-o" class="color-blue" size="14px"></van-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 店铺list -->
+            <div class="store-box">
+                <div class="s-list">
+                    <a href="./storeHome.html">
+                        <img src="./image/index-banner1.svg" class="s-pictrue" alt="">
+                        <div class="info-box">
+                            <div class="name ellipsis">XXX面馆</div>
+                            <div class="info-p flex-wrap">
+                                <p class=" txt flex-con" style="margin-right:15px;">
+                                    <van-icon name="clock-o" style="" size="14px"></van-icon>8:00 - 18:00</p>
+                                <span>2.5km ></span>
+                            </div>
+                            <div class="info-p flex-wrap">
+                                <div class="txt flex-con">
+                                    <van-icon name="location-o" style="" size="14px"></van-icon>广东省深圳市罗湖区布吉街道清水河市场A305</div>
+                                <span class="color-blue">去吃一碗</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="s-list">
+                    <a href="./storeHome.html">
+                        <img src="./image/index-banner1.svg" class="s-pictrue" alt="">
+                        <div class="info-box">
+                            <div class="name ellipsis">XXX面馆</div>
+                            <div class="info-p flex-wrap">
+                                <p class=" txt flex-con" style="margin-right:15px;">
+                                    <van-icon name="clock-o" style="" size="14px"></van-icon>8:00 - 18:00</p>
+                                <span>2.5km ></span>
+                            </div>
+                            <div class="info-p flex-wrap">
+                                <div class="txt flex-con">
+                                    <van-icon name="location-o" style="" size="14px"></van-icon>广东省深圳市罗湖区布吉街道清水河市场A305</div>
+                                <span class="color-blue">去吃一碗</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <footer>
+            <nav class="flex-wrap">
+                <a href="javascript:;" class="flex-con">
+                    <img src="image/tabbar-icon1.svg" alt="" />
+                    <p>首页</p>
+                </a>
+                <a href="javascript:;" class="flex-con">
+                    <img src="image/tabbar-icon1.svg" alt="" />
+                    <p>积分</p>
+                </a>
+                <a href="./order.html" class="flex-con">
+                    <img src="image/tabbar-icon1.svg" alt="" />
+                    <p>订单</p>
+                </a>
+                <a href="./userHome.html" class="flex-con">
+                    <img src="image/tabbar-icon1.svg" alt="" />
+                    <p>我的</p>
+                </a>
+            </nav>
+        </footer>
+
+    </div>
+</body>
+<script src="./script/base.js"></script>
+<script src="./script/vue.js"></script>
+<script src="./script/vant.js"></script>
+<script src="./script/zepto.js"></script>
+<script type="text/javascript">
+    var frmVm = new Vue({
+        el: '#app',
+        data: {},
+        watch: {},
+        created: function() {},
+        mounted: function() {},
+        computed: {},
+        methods: {
+
+        }
+    })
+</script>
+
+</html>

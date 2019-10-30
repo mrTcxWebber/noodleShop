@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>奖金</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./css/vant.css" />
+    <style>
+        body {
+            height: auto;
+            min-height: 100%;
+            background-color: #F6F6F6;
+        }
+        
+        #app {
+            position: relative;
+        }
+        
+        .main {
+            padding: 12px 12px 0;
+            overflow: hidden;
+        }
+        
+        .price-box {
+            padding: 10px 15px;
+            border-radius: 8px;
+            height: 126px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        
+        .price-box .strong {
+            line-height: 38px;
+            font-size: 26px;
+        }
+        
+        .sec-box {
+            margin-bottom: 8px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <header class="bg-blue">
+            <div class="content">
+                <div class="bar-left" onclick="history.back();">
+                    <van-icon name="arrow-left" size="20px"></van-icon>
+                </div>
+                <div class="title ">可用余额</div>
+                <div class="bar-right"></div>
+            </div>
+        </header>
+
+        <div class="main">
+            <div class="price-box bg-blue">
+                <p>可用余额 （元）</p>
+                <div class="strong">92.00</div>
+            </div>
+            <div class="sec-box">
+                <van-cell-group>
+                    <van-cell class="item-title" title="余额明细" url="./surplusPriceList.html" is-link></van-cell>
+                    <van-cell class="item-title" title="充值积分" url is-link></van-cell>
+                    <van-cell class="item-title" title="余额提现" url="./outputApply.html" is-link></van-cell>
+                    <van-cell class="item-title" title="提现记录" url is-link></van-cell>
+                </van-cell-group>
+            </div>
+
+        </div>
+
+
+    </div>
+</body>
+<script src="./script/base.js"></script>
+<script src="./script/vue.js"></script>
+<script src="./script/vant.js"></script>
+<script src="./script/zepto.js"></script>
+<script type="text/javascript">
+    var frmVm = new Vue({
+        el: '#app',
+        data: {},
+        watch: {},
+        created: function() {},
+        mounted: function() {},
+        computed: {},
+        methods: {
+
+        }
+    })
+</script>
+
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>商家收款码</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./css/vant.css" />
+    <style>
+        body {}
+
+        #app {
+            height: 100%;
+            position: relative;
+        }
+
+        .main {
+            width: 88%;
+            margin: 0 auto;
+            overflow: hidden;
+            overflow-y: auto;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .qrcode-box {
+            border-radius: 10px;
+            height: 340px;
+            background-color: #fff;
+            box-sizing: border-box;
+            padding: 0 20px;
+            overflow: hidden;
+        }
+
+        .qrcode-box h3 {
+            font-size: 20px;
+            line-height: 24px;
+            text-align: center;
+            margin: 16px 0;
+            color: #333;
+        }
+
+        .qrcode-box .content {
+            padding-top: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .p-box {margin-top: 26px;}
+
+        .p-box h5 {
+            font-size: 16px;color: #525252;font-weight: normal;
+        }
+
+        .p-box .input-box {
+            margin-top: 10px;
+            height: 36px;
+            line-height: 36px;
+            border-bottom: 1px solid #C9C9C9;
+        }
+
+        .p-box .input-box strong {
+            font-size: 30px;
+            color: #333;
+            vertical-align: middle;
+        }
+
+        .p-box .input-box input {
+            padding: 9px 6px;
+            line-height: 18px;
+            font-size: 16px;
+            color: #525252;
+        }
+        .p-box-bottom {color: #c9c9c9;margin-top: 6px;}
+        .content-bottom {margin-top: 50px;justify-content: space-around;}
+        .content-bottom button {padding: 0 15px;border-radius: 6px;
+        height: 32px;
+        line-height: 32px;}
+
+        .status-box {margin-top: 10px;}
+            .status-box .time {line-height: 1;text-align: center;
+            font-size: 20px;}
+                .status-box h1 {line-height: 50px;
+                font-size: 36px;text-align: center;
+                margin: 30px 0;}
+                    .status-box .btn-box {justify-content: space-around;}
+                        .status-box .other {line-height: 20px;
+                        margin-top: 30px;}
+
+    </style>
+</head>
+
+<body>
+    <div id="app" class="flex-wrap flex-vertical bg-blue">
+        <header class="bg-blue ">
+            <div class="content">
+                <div class="bar-left" onclick="history.back()">
+                    <van-icon name="arrow-left" size="20px"></van-icon>
+                </div>
+                <div class="title ">用户收费</div>
+                <div class="bar-right"></div>
+            </div>
+        </header>
+
+        <div class="main flex-con flex-vertical flex-wrap">
+            <!--  输入消费金额  -->
+            <div class="qrcode-box">
+                <h3>XXX面馆</h3>
+                <div class="content">
+
+                    <div class="p-box">
+                        <h5>消费金额</h5>
+                        <div class="input-box"><strong>￥</strong><input type="tel" placeholder="请输入消费金额"></div>
+                        <p class="p-box-bottom">可用积分 <b style="padding-left:5px;color:#DF273E;">200</b></p>
+                        <div class="content-bottom flex-wrap">
+                            <button type="button" class="bg-blue" @click="intPay">积分支付</button>
+                            <button type="button" class="bg-blue" @click="wxPay">微信支付</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- 支付状态 -->
+            <div class="qrcode-box">
+                <h3>XXX面馆</h3>
+                <div class="content">
+                    <div class="status-box">
+                        <div class="time color-blue">05-24 14：36  消费成功</div>
+                        <h1 class="color-black">20 积分</h1>
+                        <div class="btn-box flex-wrap">
+                            <button type="button" class="btn-bg-white" onclick="history.back()">完成</button>
+                        </div>
+                        <div class="other color-gray">交易单号：20190905130002374898</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</body>
+<script src="./script/base.js"></script>
+<script src="./script/vue.js"></script>
+<script src="./script/vant.js"></script>
+<script src="./script/zepto.js"></script>
+<script type="text/javascript">
+    var frmVm = new Vue({
+        el: '#app',
+        data: {},
+        watch: {},
+        created: function() {},
+        mounted: function() {},
+        computed: {},
+        methods: {
+            intPay: function() { // 积分支付
+                this.$toast('积分不足')
+            },
+            wxPay: function() { // 微信支付
+                this.$toast('支付失败')
+            }
+        }
+    })
+</script>
+
+</html>

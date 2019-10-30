@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>选择地区</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./css/vant.css" />
+    <style>
+        body {
+            height: auto;
+            min-height: 100%;
+        }
+.bar-left i {color: #555;}
+        .content .title {
+            color: #555;
+        }
+
+        .content .bar-left {
+            color: #555;
+        }
+
+        #app {}
+
+        .main {
+            padding: 0 15px;
+        }
+
+        .box-title {
+            margin: 10px 0;font-size: 14px;
+            font-weight: normal;
+        }
+
+        .box-title i {
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        .addr-box {
+            margin-top: 12px;
+            font-size: 0;
+        }
+
+        .addr-box span {
+            font-size: 14px;
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 12px;
+            min-width: 60px;
+            height: 26px;
+            padding: 0 10px;
+            text-align: center;
+            line-height: 26px;
+            background-color: #F2F2F2;
+            border-radius: 5px;box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .addr-box a {
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <div class="content van-hairline--bottom">
+                <div class="bar-left" tapmode onclick="history.back()">
+                    <van-icon name="arrow-left" size="20px"></van-icon>
+                </div>
+                <div class="title ">选择地区</div>
+                <div class="bar-right"></div>
+            </div>
+        </header>
+
+        <div class="main ">
+            <h5 class="box-title">
+                <van-icon name="location" size="14px" ></van-icon> 您所在的地区
+            </h5>
+            <div class="addr-box"><span><a href="./index.html">深圳</a></span></div>
+            <h5 class="box-title">已开通地区</h5>
+            <div class="addr-box">
+                <span><a href="./index.html">深圳</a></span>
+                <span><a href="./index.html">北京</a></span>
+                <span><a href="./index.html">上海</a></span>
+                <span><a href="./index.html">广州</a></span>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+<script src="./script/base.js"></script>
+<script src="./script/vue.js"></script>
+<script src="./script/vant.js"></script>
+<script src="./script/zepto.js"></script>
+<script type="text/javascript">
+    var frmVm = new Vue({
+        el: '#app',
+        data: {},
+        watch: {},
+        created: function() {},
+        mounted: function() {},
+        computed: {},
+        methods: {}
+    })
+</script>
+
+</html>

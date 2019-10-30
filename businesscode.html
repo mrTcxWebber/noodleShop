@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>商家收款码</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./css/vant.css" />
+    <style>
+        body {}
+        
+        #app {
+            height: 100%;
+            position: relative;
+        }
+        
+        .main {
+            width: 88%;
+            margin: 0 auto;
+            overflow: hidden;
+            overflow-y: auto;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .qrcode-box {
+            border-radius: 10px;
+            height: 340px;
+            background-color: #fff;
+            box-sizing: border-box;
+            padding: 20px;
+            overflow: hidden;
+        }
+        
+        .qrcode-box h3 {
+            font-size: 20px;
+            line-height: 24px;
+            text-align: center;
+            margin: 16px 0;
+            color: #333;
+        }
+        
+        .qrcode-box .content {
+            padding-top: 10px;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .qrcode-box .content img {
+            width: 60%;
+            max-height: 100%;
+        }
+        
+        .tips-box {
+            text-align: center;
+            font-size: 16px;
+            color: #fff;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" class="flex-wrap flex-vertical bg-blue">
+        <header class="bg-blue ">
+            <div class="content">
+                <div class="bar-left" onclick="history.back()">
+                    <van-icon name="arrow-left" size="20px"></van-icon>
+                </div>
+                <div class="title ">商家收款码</div>
+                <div class="bar-right"></div>
+            </div>
+        </header>
+
+        <div class="main flex-con flex-vertical flex-wrap">
+            <div class="qrcode-box flex-wrap flex-vertical">
+                <h3>XXX面馆</h3>
+                <div class="content flex-wrap flex-con">
+                    <img src="image/qrcode.png" alt="">
+                </div>
+            </div>
+            <div class="tips-box">请使面馆积分/微信支付</div>
+
+        </div>
+
+
+    </div>
+</body>
+<script src="./script/base.js"></script>
+<script src="./script/vue.js"></script>
+<script src="./script/vant.js"></script>
+<script src="./script/zepto.js"></script>
+<script type="text/javascript">
+    var frmVm = new Vue({
+        el: '#app',
+        data: {},
+        watch: {},
+        created: function() {},
+        mounted: function() {},
+        computed: {},
+        methods: {
+
+        }
+    })
+</script>
+
+</html>

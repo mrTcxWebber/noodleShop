@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./css/vant.css" />
+    <style>
+        body {
+        }
+
+        #app {
+            height: 100%;
+            position: relative;
+        }
+        .avatar {
+            width: 76px;
+            height: 76px;
+            margin: 32px auto 0;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .login-title {
+            font-size: 20px;
+            line-height: 28px;
+            margin: 20px auto 0;
+        }
+
+        #btn-wxAuth {
+            margin-top: 30px;
+        }
+        .phone-ipt-box {
+            min-height: 44px;
+            margin-top: 12px;
+            font-size: 16px;
+        }
+        .other-box {
+            font-size: 15px;
+            margin-top: 22px;
+        }
+
+        .bottom-box {
+            margin: 0 auto 20px;
+            color: #939394;
+            font-size: 10px;
+        }
+        .main {overflow-y: auto;padding: 0 30px;}
+    </style>
+</head>
+
+<body>
+    <div id="app" class="flex-wrap flex-vertical">
+        <header class="bg-blue">
+            <div class="content van-hairline--bottom">
+                <div class="bar-left" tapmode onclick="history.back()">
+                    <van-icon name="arrow-left" size="20px" ></van-icon>
+                </div>
+                <div class="title ">登录</div>
+                <div class="bar-right"></div>
+            </div>
+        </header>
+
+        <div class="main flex-con flex-wrap flex-vertical">
+            <div class="avatar">
+              <img src="./image/user_prize_default@2x.png" width="100%" height="auto" alt="">
+            </div>
+            <!-- <h2 class="login-title color-black text-center"></h2> -->
+            <van-field v-model="phone" class="phone-ipt-box" type="tel" clearable placeholder="请输入手机号"></van-field>
+            <van-field v-model="pwd" class="phone-ipt-box" :error-message="errMsg" :type="pwdType" :right-icon="pwdRightIcon" @click-right-icon="togglePwdType" clearable placeholder="请输入密码"></van-field>
+            <div class="other-box flex-wrap"><button type="button" onclick="location.href='register.html'">立即注册</button><button type="button" onclick="location.href='findPwd.html'" style="margin-left: auto;">忘记密码</button></div>
+            <button type="button" class="bg-blue btn-large" :class="{'disabled': phone.length !== 11}" id="btn-wxAuth" @click="toSubmit">登录</button>
+
+
+        </div>
+
+    </div>
+</body>
+<script src="./script/base.js"></script>
+<script src="./script/vue.js"></script>
+<script src="./script/vant.js"></script>
+<script src="./script/zepto.js"></script>
+<script type="text/javascript">
+
+
+        var frmVm = new Vue({
+            el: '#app',
+            data: {
+                phone: '',
+                pwd: '',
+                pwdType: 'password',
+                pwdRightIcon: 'closed-eye',
+                errMsg: '', // 密码错误或者该账号没注册
+                initWindowHeight: window.innerHeight
+            },
+            watch: {
+            },
+            created: function() {},
+            mounted: function() {
+                // this.listenSwiperight()
+                // $util.setResizeHide(function(oldHeight, nHeight) {
+                //     var btn = document.querySelector('#btn-wxAuth')
+                //     var bottomBox = document.querySelector('.bottom-box')
+                //     if(oldHeight > nHeight) {
+                //       //  btn.style.display = 'none'
+                //         bottomBox.style.display = 'none'
+                //     }else {
+                //       //  btn.style.display = 'block';
+                //         bottomBox.style.display = 'block';
+                //     }
+                // })
+            },
+            computed: {},
+            methods: {
+                togglePwdType: function() {
+                    if(this.pwdType === 'password') {
+                        this.pwdType = 'text'
+                        this.pwdRightIcon = 'eye-o'
+                    }else {
+                        this.pwdType = 'password'
+                        this.pwdRightIcon = 'closed-eye'
+                    }
+                },
+                toSubmit: function() {
+                    if (!(/^1[34578]\d{9}$/.test(this.phone))) {
+                        this.$toast('手机号码有误!');
+                        return;
+                    }
+                }
+
+            }
+        })
+
+</script>
+
+</html>

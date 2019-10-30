@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>我的</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./css/vant.css" />
+    <style>
+        body {
+            height: auto;
+            min-height: 100%;
+            background-color: #F6F6F6;
+        }
+        
+        #app {
+            padding-bottom: 50px;
+            position: relative;
+        }
+        
+        .main {
+            padding: 12px 12px 0;
+            overflow: hidden;
+        }
+        
+        header {
+            background-color: #fcfcfc;
+            padding-bottom: 15px;
+        }
+        
+        header .bar-right i {
+            vertical-align: middle;
+            color: #fff;
+        }
+        
+        .header-bg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 0;
+            width: 100%;
+            height: 76%;
+            background-color: #11c1c1;
+            border-radius: 0 0 90% 60% / 21%;
+        }
+        
+        .member-info-box {
+            margin: 0 12px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.06);
+            background-color: #ffffff;
+            position: relative;
+        }
+        
+        .member-info-box .head {
+            height: 50px;
+        }
+        
+        .member-info-box .head .avator-box {
+            width: 66px;
+            height: 66px;
+            border-radius: 50%;
+            margin: 0 12px;
+            overflow: hidden;
+            position: relative;
+            top: -30px;
+            z-index: 1;
+        }
+        
+        .member-info-box .head .info-main {
+            margin: 16px 0;
+            text-align: center;
+            line-height: 20px;
+            overflow: hidden;
+        }
+        
+        .member-info-box .head .vip-tag {
+            height: 22px;
+            line-height: 22px;
+            padding: 0 5px;
+            margin-left: 12px;
+            border-radius: 3px;
+            background-color: #debf95;
+            color: #ffffff;
+            font-size: 12px;
+        }
+        
+        .member-info-box .other-item {
+            padding-bottom: 6px;
+        }
+        
+        .member-info-box .other-item li {
+            color: #31c7c5;
+            text-align: center;
+            position: relative;
+        }
+        
+        .member-info-box .other-item li:not(:last-child):after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            z-index: 10;
+            background-color: #53bfc1;
+            width: 1px;
+            height: 10px;
+            transform: translate(0, -50%);
+            -webkit-transform: translate(0, -50%);
+        }
+        
+        footer {}
+        
+        footer nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background-color: #fff;
+            border-top: 1px solid #FBFBFB;
+        }
+        
+        footer a {
+            text-align: center;
+            color: #AAA;
+            font-size: 12px;
+            padding-top: 6px;
+        }
+        
+        footer a.active {
+            color: #53BFC1;
+        }
+        
+        footer img {
+            width: 23px;
+            height: 23px;
+            vertical-align: top;
+        }
+        
+        footer p {
+            line-height: 20px;
+        }
+        
+        .sec-box {
+            margin-bottom: 8px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .item-icon-box {
+            padding-right: 10px;
+        }
+        
+        .item-icon-box i {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <div class="header-bg"></div>
+            <div class="content">
+                <div class="bar-left">
+                    <!-- <van-icon name="arrow-left" size="20px" ></van-icon> -->
+                </div>
+                <div class="title ">我的订单</div>
+                <div class="bar-right">
+                    <van-icon name="setting-o" size="20px"></van-icon>
+                </div>
+            </div>
+            <div class="member-info-box">
+                <div class="head flex-wrap">
+                    <div class="avator-box"><img src="./image/user_prize_default@2x.png" width="100%" alt=""></div>
+                    <div class="info-main flex-con"><span style="max-width:62%;vertical-align:middle;" class="ellipsis color-black">昵称昵称昵称昵称</span><span class="vip-tag">高级会员</span></div>
+                </div>
+                <ul class="other-item flex-wrap">
+                    <li class="flex-con">
+                        <a href="./order.html" class="color-blue">
+                            <strong>12</strong>
+                            <p>订单</p>
+                        </a>
+                    </li>
+                    <li class="flex-con">
+                        <strong>257.00</strong>
+                        <p>积分</p>
+                    </li>
+                    <li class="flex-con">
+                        <a href="./surplusPrice.html" class="color-blue">
+                            <strong>109.00</strong>
+                            <p>奖金</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <div class="main">
+            <div class="sec-box">
+                <van-cell-group>
+                    <van-cell class="item-title" title="我的付款码" url is-link>
+                        <div slot="icon" class="item-icon-box">
+                            <van-icon name="apps-o" size="20px"></van-icon>
+                        </div>
+                    </van-cell>
+                    <van-cell class="item-title" title="邀请好友" url is-link>
+                        <div slot="icon" class="item-icon-box">
+                            <van-icon name="cluster-o" size="20px"></van-icon>
+                        </div>
+                    </van-cell>
+                    <van-cell class="item-title" title="我的好友" url is-link>
+                        <div slot="icon" class="item-icon-box">
+                            <van-icon name="friends-o" size="20px"></van-icon>
+                        </div>
+                    </van-cell>
+                </van-cell-group>
+            </div>
+            <div class="sec-box">
+                <van-cell-group>
+                    <van-cell class="item-title" title="帮助中心" url is-link>
+                        <div slot="icon" class="item-icon-box">
+                            <van-icon name="comment-o" size="20px"></van-icon>
+                        </div>
+                    </van-cell>
+                    <van-cell class="item-title" title="联系客服" url is-link>
+                        <div slot="icon" class="item-icon-box">
+                            <van-icon name="service-o" size="20px"></van-icon>
+                        </div>
+                    </van-cell>
+                    <van-cell class="item-title" title="关于我们" url is-link>
+                        <div slot="icon" class="item-icon-box">
+                            <van-icon name="smile-o" size="20px"></van-icon>
+                        </div>
+                    </van-cell>
+                </van-cell-group>
+            </div>
+        </div>
+        <footer>
+            <nav class="flex-wrap">
+                <a href="./index.html" class="flex-con">
+                    <img src="image/tabbar-icon1.svg" alt="" />
+                    <p>首页</p>
+                </a>
+                <a href="javascript:;" class="flex-con">
+                    <img src="image/tabbar-icon1.svg" alt="" />
+                    <p>积分</p>
+                </a>
+                <a href="./order.html" class="flex-con">
+                    <img src="image/tabbar-icon1.svg" alt="" />
+                    <p>订单</p>
+                </a>
+                <a href="javascript:;" class="flex-con">
+                    <img src="image/tabbar-icon1.svg" alt="" />
+                    <p>我的</p>
+                </a>
+            </nav>
+        </footer>
+
+    </div>
+</body>
+<script src="./script/base.js"></script>
+<script src="./script/vue.js"></script>
+<script src="./script/vant.js"></script>
+<script src="./script/zepto.js"></script>
+<script type="text/javascript">
+    var frmVm = new Vue({
+        el: '#app',
+        data: {},
+        watch: {},
+        created: function() {},
+        mounted: function() {},
+        computed: {},
+        methods: {
+
+        }
+    })
+</script>
+
+</html>

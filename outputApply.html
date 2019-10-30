@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>提现申请</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./css/vant.css" />
+    <style>
+        body {
+            height: auto;
+            min-height: 100%;
+        }
+        
+        #app {
+            position: relative;
+        }
+        
+        .main {}
+        
+        .list-box {
+            padding-left: 10px;
+        }
+        
+        .list-box li {
+            padding: 8px 10px 8px 0;
+            border-bottom: 1px solid #F2F2F2;
+            min-height: 50px;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+        }
+        
+        .list-box .arrow-right {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            width: 8px;
+            height: 8px;
+            border-right: 1px #999 solid;
+            border-bottom: 1px #999 solid;
+            transform: rotate(-45deg) translate(0, -50%);
+            -webkit-transform: rotate(-45deg) translate(0, -50%);
+        }
+        
+        .list-box li:last-child {
+            border-bottom: none;
+        }
+        
+        .list-box .inner {
+            width: 80px;
+            overflow: hidden;
+        }
+        
+        .list-box .inner h5 {
+            color: #333333;
+            font-size: 14px;
+            font-weight: normal;
+        }
+        
+        .list-box .right {}
+        
+        .list-box .right p {
+            color: #a9a9a9;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <header class="bg-blue">
+            <div class="content">
+                <div class="bar-left" onclick="history.back();">
+                    <van-icon name="arrow-left" size="20px"></van-icon>
+                </div>
+                <div class="title ">提现申请</div>
+                <div class="bar-right"></div>
+            </div>
+        </header>
+
+        <div class="main">
+
+            <ul class="list-box">
+                <li class="list-item flex-wrap" style="border-bottom:none;">
+                    <div class="inner">
+                        <p>提现金额</p>
+                    </div>
+                    <div class="right"></div>
+                </li>
+                <li class="list-item flex-wrap">
+                    <div class="inner">
+                        <strong style="font-size:40px;">￥</strong>
+                    </div>
+                    <div class="right">
+                        <p class="">可用奖金 ¥109.00</p>
+                    </div>
+                </li>
+                <li class="list-item flex-wrap">
+                    <div class="inner">
+                        <p>提现方式</p>
+                    </div>
+                    <div class="right">
+                        <p>微信现金红包</p>
+                    </div>
+                    <div class="arrow-right"></div>
+                </li>
+                <li class="list-item flex-wrap">
+                    <div class="inner">
+                        <p>提现账号</p>
+                    </div>
+                    <div class="right">
+                        <p>农业银行（3834）</p>
+                    </div>
+                    <div class="arrow-right"></div>
+                </li>
+            </ul>
+
+        </div>
+
+
+    </div>
+</body>
+<script src="./script/base.js"></script>
+<script src="./script/vue.js"></script>
+<script src="./script/vant.js"></script>
+<script src="./script/zepto.js"></script>
+<script type="text/javascript">
+    var frmVm = new Vue({
+        el: '#app',
+        data: {},
+        watch: {},
+        created: function() {},
+        mounted: function() {},
+        computed: {},
+        methods: {
+
+        }
+    })
+</script>
+
+</html>

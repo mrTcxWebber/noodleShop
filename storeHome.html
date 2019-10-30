@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>店铺</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./css/vant.css" />
+    <style>
+        body {
+            height: auto;
+            min-height: 100%;
+        }
+
+        .ad-box {
+            min-height: 110px;
+            margin-bottom: -6px;
+        }
+
+        .ad-box img {
+            object-fit: contain;
+        }
+
+        .info-box {
+            padding: 10px 12px;
+            border-radius: 8px 8px 0 0;
+            background-color: #fff;
+            border-bottom: 6px solid #F9F9F9;
+            margin-top: -10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-box .info-list {
+            margin: 3px 0;
+            align-items: center;
+            line-height: 18px;
+        }
+
+        .info-box .info-list a {
+            padding-left: 15px;
+        }
+
+        .g-wrap {
+            padding: 0 12px;
+        }
+
+        h5 {
+            height: 30px;
+            line-height: 30px;
+            font-weight: normal;
+            border-bottom: 1px solid #F8F8F8;
+        }
+
+        .g-box .list-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #F8F8F8;
+        }
+        .g-box .list-item:last-child {
+            border-bottom: none;
+        }
+
+        .g-box .list-item img {
+            width: 70px;
+            height: 70px;
+        }
+
+        .g-box .list-item-info {
+            padding-left: 12px;
+            flex-direction: column;
+            justify-content: space-around;
+            overflow: hidden;
+        }
+
+        .g-box .info-list span {
+            padding: 0 6px;
+            margin-left: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+
+        <div class="ad-box">
+            <img src="./image/store-ad.jpg" width="100%" alt="">
+        </div>
+
+        <div class="info-box">
+            <div class="info-list flex-wrap">
+                <p class="flex-con">文叔的面馆</p>
+                <a class="color-blue">0755-3333333</a>
+            </div>
+            <div class="info-list flex-wrap">
+                <p class="flex-con">广东省深圳市福田区华强北街道福华路190号福田市场对面3楼302文叔小馆</p>
+                <a class="color-blue">地图/导航</a>
+            </div>
+        </div>
+        <div class="g-wrap">
+            <h5>店铺菜品</h5>
+            <div class="g-box">
+                <div class="list-item flex-wrap">
+                    <img src="./image/g1.jpg" alt="" />
+                    <div class="list-item-info flex-con flex-wrap">
+                        <div class="info-list flex-wrap">
+                            <p>香辣牛若面</p>
+                            <span>20积分</span>
+                        </div>
+                        <div class="info-list flex-wrap">
+                            <p>店面价：25.00 元</p>
+                            <span>会员专属</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-item flex-wrap">
+                    <img src="./image/g1.jpg" alt="" />
+                    <div class="list-item-info flex-con flex-wrap">
+                        <div class="info-list flex-wrap">
+                            <p>香辣牛若面</p>
+                            <span>20积分</span>
+                        </div>
+                        <div class="info-list flex-wrap">
+                            <p>店面价：25.00 元</p>
+                            <span>会员专属</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-item flex-wrap">
+                    <img src="./image/g1.jpg" alt="" />
+                    <div class="list-item-info flex-con flex-wrap">
+                        <div class="info-list flex-wrap">
+                            <p>香辣牛若面</p>
+                            <span>20积分</span>
+                        </div>
+                        <div class="info-list flex-wrap">
+                            <p>店面价：25.00 元</p>
+                            <span>会员专属</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+</body>
+<script src="./script/base.js"></script>
+<script src="./script/vue.js"></script>
+<script src="./script/vant.js"></script>
+<script src="./script/zepto.js"></script>
+<script type="text/javascript">
+    var frmVm = new Vue({
+        el: '#app',
+        data: {},
+        watch: {},
+        created: function() {},
+        mounted: function() {},
+        computed: {},
+        methods: {}
+    })
+</script>
+
+</html>
