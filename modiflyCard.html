@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
-    <title>注册</title>
+    <title>绑定银行卡</title>
     <link rel="stylesheet" type="text/css" href="./css/reset.css" />
     <link rel="stylesheet" type="text/css" href="./css/vant.css" />
     <style>
@@ -35,8 +35,7 @@
         
         .phone-ipt-box {
             min-height: 44px;
-            margin-top: 12px;
-            font-size: 16px;
+            font-size: 14px;
         }
         
         .other-box {
@@ -52,7 +51,13 @@
         
         .main {
             overflow-y: auto;
-            padding: 0 30px;
+        }
+        
+        .list-space {
+            height: 26px;
+            line-height: 26px;
+            background-color: #f2f2f2;
+            text-indent: 16px;
         }
     </style>
 </head>
@@ -64,25 +69,23 @@
                 <div class="bar-left" tapmode onclick="history.back()">
                     <van-icon name="arrow-left" size="20px"></van-icon>
                 </div>
-                <div class="title ">注册</div>
+                <div class="title ">绑定银行卡</div>
                 <div class="bar-right"></div>
             </div>
         </header>
 
         <div class="main flex-con flex-wrap flex-vertical">
-            <div class="avatar">
-                <img src="./image/user_prize_default@2x.png" width="100%" height="auto" alt="">
-            </div>
-            <!-- <h2 class="login-title color-black text-center"></h2> -->
+
             <form class="login-from" @submit.prevent="submit">
-                <van-field v-model="phone" class="phone-ipt-box" type="tel" clearable placeholder="请输入手机号"></van-field>
-                <van-field v-model="code" class="phone-ipt-box" type="tel" center clearable placeholder="请输入验证码">
+                <van-field label="姓名" required v-model="name" class="phone-ipt-box" type="text" clearable placeholder=""></van-field>
+                <van-field label="身份证号码" required v-model="cid" class="phone-ipt-box" type="tel" clearable placeholder="请输入身份证号码"></van-field>
+                <p class="color-gray fz12 list-space">请添加本人名下的借记卡</p>
+                <van-field label="卡号" required v-model="cardNum" class="phone-ipt-box" type="tel" clearable placeholder="请输入卡号"></van-field>
+                <van-field label="手机号码" required v-model="phone" class="phone-ipt-box" type="tel" clearable placeholder="请输入手机号"></van-field>
+                <van-field label="验证码" required v-model="code" class="phone-ipt-box" type="tel" center clearable placeholder="请输入验证码">
                     <button class="btn-sc van-button van-button--small bg-blue" :class="{disabled: isSendCode}" slot="button" type="button" @click="sendCode">{{content}}</button>
                 </van-field>
-                <van-field v-model="pwd" class="phone-ipt-box" :type="pwdType" :right-icon="pwdRightIcon" @click-right-icon="togglePwdType" @blur="onBlurPwd" clearable placeholder="请输入密码"></van-field>
-                <van-field v-model="inviteCode" class="phone-ipt-box" type="tel" clearable placeholder="请输入邀请码"></van-field>
-                <!-- <div class="tips color-gray">温馨提示: 登录时将自动注册, 且代表您已同意<span class="color-blue" tapmode @click="openProtocol">《协议》</span></div> -->
-                <button type="submit" style="margin-top:30px;" :class="{'disabled': phone.length !== 11}" class="bg-blue btn-large">立即注册</button>
+                <button type="submit" style="margin-top:30px;" :class="{'disabled': phone.length !== 11}" class="bg-blue btn-large">绑定</button>
             </form>
 
 
@@ -99,16 +102,14 @@
         el: '#app',
         data: {
             phone: '',
-            inviteCode: '',
-            pwd: '',
-            pwdType: 'password',
-            pwdRightIcon: 'closed-eye',
+            name: '',
+            cid: '',
+            cardNum: '',
             timer: null,
             code: '',
             content: '获取验证码',
             totalTime: 60,
-            isSendCode: false,
-            initWindowHeight: window.innerHeight
+            isSendCode: false
         },
         watch: {},
         created: function() {},

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>我的好友</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./css/vant.css" />
+    <style>
+        body {}
+        
+        #app {
+            height: 100%;
+            position: relative;
+        }
+        
+        .main {}
+        
+        .list-box {
+            padding-left: 10px;
+        }
+        
+        .list-box li {
+            padding: 8px 0;
+            border-bottom: 1px solid #F2F2F2;
+        }
+        
+        .list-box li a {
+            align-items: center;
+        }
+        
+        .list-box li:last-child {
+            border-bottom: none;
+        }
+        
+        .list-box .inner {
+            overflow: hidden;
+        }
+        
+        .list-box .inner h5 {
+            color: #333333;
+            font-size: 14px;
+            font-weight: normal;
+        }
+        
+        .list-box .right {}
+        
+        .tab {
+            height: 30px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+        
+        .tab .tab-item {
+            height: 100%;
+            line-height: 30px;
+            color: #555555;
+            text-align: center;
+            position: relative;
+        }
+        
+        .tab .tab-item.active:after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            z-index: 1;
+            height: 2px;
+            width: 50%;
+            background-color: #555555;
+            transform: translate(-50%, 0);
+            -webkit-transform: translate(-50%, 0);
+        }
+        
+        .list-header {
+            background-color: #f2f2f2;
+            height: 30px;
+            line-height: 30px;
+            font-size: 12px;
+            color: #999999;
+            text-align: center;
+        }
+        
+        .list-header span:nth-child(1),
+        .f-info:nth-child(1) {
+            width: 34%;
+            text-align: left;
+            text-indent: 10px;
+        }
+        
+        .list-header span:nth-child(2),
+        .f-info:nth-child(2) {
+            width: 25%;
+        }
+        
+        .list-header span:nth-child(3),
+        .f-info:nth-child(3) {
+            width: 25%;
+        }
+        
+        .list-header span:nth-child(4),
+        .f-info:nth-child(4) {}
+        
+        .f-info {
+            text-align: center;
+        }
+        
+        .f-info .name {
+            margin-left: 10px;
+            overflow: hidden;
+            line-height: 30px;
+        }
+        
+        .color-skyblue {
+            color: #6699ff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" class="flex-wrap flex-vertical">
+        <header class="bg-blue">
+            <div class="content">
+                <div class="bar-left" onclick="history.back();">
+                    <van-icon name="arrow-left" size="20px"></van-icon>
+                </div>
+                <div class="title ">我的好友</div>
+                <div class="bar-right"></div>
+            </div>
+        </header>
+        <div class="tab flex-wrap">
+            <span class="tab-item flex-con active">直接推荐</span>
+            <span class="tab-item flex-con">间接推荐</span>
+        </div>
+        <div class="list-header flex-wrap">
+            <span>我的好友</span>
+            <span>充值次数</span>
+            <span>总消费</span>
+            <span class="flex-con">查看</span>
+        </div>
+
+        <div class="main flex-con" style="overflow-y:auto;">
+
+            <ul class="list-box">
+                <li class="list-item">
+                    <a href="./friendConsumptionList.html" class="flex-wrap">
+                        <div class="f-info flex-wrap">
+                            <img src="./image/user_prize_default@2x.png" width="30" height="30" alt="">
+                            <span class="flex-con ellipsis name">欧文</span>
+                        </div>
+                        <div class="f-info color-skyblue">3</div>
+                        <div class="f-info color-skyblue">200.00</div>
+                        <div class="f-info flex-con">></div>
+                    </a>
+                </li>
+                <li class="list-item">
+                    <a href="./friendConsumptionList.html" class="flex-wrap">
+                        <div class="f-info flex-wrap">
+                            <img src="./image/user_prize_default@2x.png" width="30" height="30" alt="">
+                            <span class="flex-con ellipsis name">欧文</span>
+                        </div>
+                        <div class="f-info color-skyblue">3</div>
+                        <div class="f-info color-skyblue">200.00</div>
+                        <div class="f-info flex-con">></div>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+
+    </div>
+</body>
+<script src="./script/base.js"></script>
+<script src="./script/vue.js"></script>
+<script src="./script/vant.js"></script>
+<script src="./script/zepto.js"></script>
+<script type="text/javascript">
+    var frmVm = new Vue({
+        el: '#app',
+        data: {},
+        watch: {},
+        created: function() {},
+        mounted: function() {},
+        computed: {},
+        methods: {
+
+        }
+    })
+</script>
+
+</html>

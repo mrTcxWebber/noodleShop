@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>我的银行卡</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./css/vant.css" />
+    <style>
+        body {
+            min-height: 100%;
+            height: auto;
+        }
+        
+        #app {
+            position: relative;
+        }
+        
+        .main {
+            padding: 0 12px;
+        }
+        
+        .list-item {
+            height: 100px;
+            margin-top: 12px;
+            border-radius: 12px;
+            padding: 10px 12px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .list-item:after {
+            content: '';
+            position: absolute;
+            left: 60%;
+            top: 60px;
+            z-index: 1;
+            width: 70px;
+            height: 70px;
+            background: url(./image/price_symbol.png) center center no-repeat;
+            opacity: .3;
+            background-size: cover;
+            transform: rotate(35deg);
+            -webkit-transform: rotate(-35deg);
+        }
+        
+        .list-item .name {
+            margin-bottom: 6px;
+        }
+        
+        .list-item button {
+            position: absolute;
+            right: 15px;
+            bottom: 10px;
+            z-index: 10;
+            height: 22px;
+            line-height: 22px;
+            padding: 0 10px;
+            border-radius: 15px;
+            background-color: #ffffff;
+            color: #00c0c0;
+            overflow: hidden;
+        }
+        
+        .list-other-box {
+            margin-top: 5px;
+            text-align: center;
+            padding: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <header class="bg-blue">
+            <div class="content van-hairline--bottom">
+                <div class="bar-left" tapmode onclick="history.back()">
+                    <van-icon name="arrow-left" size="20px"></van-icon>
+                </div>
+                <div class="title ">我的银行卡</div>
+                <div class="bar-right"></div>
+            </div>
+        </header>
+
+        <div class="main">
+            <div class="list-box">
+                <div class="list-item bg-blue">
+                    <div class="name">中国银行</div>
+                    <p>6227**************4435</p>
+                    <button type="button" class="fz12" @click="changeCard">更换</button>
+                </div>
+            </div>
+            <div class="list-other-box"><span class="color-blue fz12" @click="addCard">+增加</span></div>
+
+        </div>
+
+    </div>
+</body>
+<script src="./script/base.js"></script>
+<script src="./script/vue.js"></script>
+<script src="./script/vant.js"></script>
+<script src="./script/zepto.js"></script>
+<script type="text/javascript">
+    var frmVm = new Vue({
+        el: '#app',
+        data: {
+
+        },
+        watch: {},
+        created: function() {},
+        mounted: function() {},
+        computed: {},
+        methods: {
+            changeCard: function() {
+                location.href = './modiflyCard.html'
+            },
+            addCard: function() {
+                location.href = './modiflyCard.html'
+            }
+        }
+    })
+</script>
+
+</html>

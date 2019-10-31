@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
-    <title>注册</title>
+    <title>修改密码</title>
     <link rel="stylesheet" type="text/css" href="./css/reset.css" />
     <link rel="stylesheet" type="text/css" href="./css/vant.css" />
     <style>
@@ -35,8 +35,7 @@
         
         .phone-ipt-box {
             min-height: 44px;
-            margin-top: 12px;
-            font-size: 16px;
+            font-size: 14px;
         }
         
         .other-box {
@@ -52,7 +51,6 @@
         
         .main {
             overflow-y: auto;
-            padding: 0 30px;
         }
     </style>
 </head>
@@ -64,25 +62,20 @@
                 <div class="bar-left" tapmode onclick="history.back()">
                     <van-icon name="arrow-left" size="20px"></van-icon>
                 </div>
-                <div class="title ">注册</div>
+                <div class="title ">修改密码</div>
                 <div class="bar-right"></div>
             </div>
         </header>
 
         <div class="main flex-con flex-wrap flex-vertical">
-            <div class="avatar">
-                <img src="./image/user_prize_default@2x.png" width="100%" height="auto" alt="">
-            </div>
-            <!-- <h2 class="login-title color-black text-center"></h2> -->
+
             <form class="login-from" @submit.prevent="submit">
                 <van-field v-model="phone" class="phone-ipt-box" type="tel" clearable placeholder="请输入手机号"></van-field>
                 <van-field v-model="code" class="phone-ipt-box" type="tel" center clearable placeholder="请输入验证码">
                     <button class="btn-sc van-button van-button--small bg-blue" :class="{disabled: isSendCode}" slot="button" type="button" @click="sendCode">{{content}}</button>
                 </van-field>
-                <van-field v-model="pwd" class="phone-ipt-box" :type="pwdType" :right-icon="pwdRightIcon" @click-right-icon="togglePwdType" @blur="onBlurPwd" clearable placeholder="请输入密码"></van-field>
-                <van-field v-model="inviteCode" class="phone-ipt-box" type="tel" clearable placeholder="请输入邀请码"></van-field>
-                <!-- <div class="tips color-gray">温馨提示: 登录时将自动注册, 且代表您已同意<span class="color-blue" tapmode @click="openProtocol">《协议》</span></div> -->
-                <button type="submit" style="margin-top:30px;" :class="{'disabled': phone.length !== 11}" class="bg-blue btn-large">立即注册</button>
+                <van-field v-model="pwd" class="phone-ipt-box" :type="pwdType" :right-icon="pwdRightIcon" @click-right-icon="togglePwdType" @blur="onBlurPwd" clearable placeholder="请设置新密码"></van-field>
+                <button type="submit" style="margin-top:30px;" :class="{'disabled': phone.length !== 11}" class="bg-blue btn-large">保存修改</button>
             </form>
 
 
@@ -99,7 +92,6 @@
         el: '#app',
         data: {
             phone: '',
-            inviteCode: '',
             pwd: '',
             pwdType: 'password',
             pwdRightIcon: 'closed-eye',
@@ -107,8 +99,7 @@
             code: '',
             content: '获取验证码',
             totalTime: 60,
-            isSendCode: false,
-            initWindowHeight: window.innerHeight
+            isSendCode: false
         },
         watch: {},
         created: function() {},

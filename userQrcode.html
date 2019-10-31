@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>我的付款码</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./css/vant.css" />
+    <style>
+        body {}
+        
+        #app {
+            height: 100%;
+            position: relative;
+        }
+        
+        .main {
+            width: 88%;
+            margin: 0 auto;
+            overflow: hidden;
+            overflow-y: auto;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .qrcode-box {
+            border-radius: 10px;
+            min-height: 340px;
+            background-color: #fff;
+            box-sizing: border-box;
+            padding: 20px;
+            overflow: hidden;
+        }
+        
+        .avator-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 6px;
+        }
+        
+        .qrcode-box h3 {
+            font-size: 20px;
+            line-height: 24px;
+            text-align: center;
+            margin: 16px 0;
+            color: #333;
+        }
+        
+        h6 {
+            text-align: center;
+        }
+        
+        .qrcode-box .content {
+            padding: 25px 0;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .qrcode-box .content img {
+            width: 60%;
+            max-height: 100%;
+        }
+        
+        .tips-box {
+            text-align: center;
+            font-size: 14px;
+            color: #27c9c9;
+            margin-top: 10px;
+        }
+        
+        .btn-share {
+            display: block;
+            margin: 10px auto 0;
+            width: 126px;
+            height: 36px;
+            text-align: center;
+            line-height: 36px;
+            color: #27c9c9;
+            border-radius: 3px;
+            border: 1px solid #27C9C9;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" class="flex-wrap flex-vertical bg-blue">
+        <header class="bg-blue ">
+            <div class="content">
+                <div class="bar-left" onclick="history.back()">
+                    <van-icon name="arrow-left" size="20px"></van-icon>
+                </div>
+                <div class="title ">我的付款码</div>
+                <div class="bar-right"></div>
+            </div>
+        </header>
+
+        <div class="main flex-con flex-vertical flex-wrap">
+            <div class="qrcode-box flex-wrap flex-vertical">
+                <div class="avator-box"><img src="./image/user_prize_default@2x.png" width="100%" height="100%" alt=""></div>
+                <h6 class="color-blue">用户名称</h6 class="color-blue">
+                <div class="content flex-wrap flex-con">
+                    <img src="image/qrcode.png" alt="">
+                </div>
+                <p class="tips-box">邀请好友得多重好礼</p>
+                <button type="button" class="btn-share">分享给好友</button>
+            </div>
+
+        </div>
+
+
+    </div>
+</body>
+<script src="./script/base.js"></script>
+<script src="./script/vue.js"></script>
+<script src="./script/vant.js"></script>
+<script src="./script/zepto.js"></script>
+<script type="text/javascript">
+    var frmVm = new Vue({
+        el: '#app',
+        data: {},
+        watch: {},
+        created: function() {},
+        mounted: function() {},
+        computed: {},
+        methods: {
+
+        }
+    })
+</script>
+
+</html>

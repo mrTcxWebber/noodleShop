@@ -50,6 +50,7 @@
         
         .list-box .inner {
             width: 80px;
+            color: #666666;
             overflow: hidden;
         }
         
@@ -63,6 +64,95 @@
         
         .list-box .right p {
             color: #a9a9a9;
+        }
+        
+        .outputInput {
+            color: #333333;
+            line-height: 22px;
+        }
+        
+        .other-box {
+            margin-top: 50px;
+            text-align: center;
+        }
+        
+        .other-box button {
+            width: 120px;
+            border-radius: 3px;
+            text-align: center;
+            line-height: 32px;
+            height: 32px;
+        }
+        
+        .payPwd-box {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .6);
+        }
+        
+        .payPwd-box .content {
+            position: absolute;
+            left: 50%;
+            top: 30%;
+            z-index: 10;
+            width: 80%;
+            border-radius: 10px;
+            background-color: #fff;
+            padding: 25px 10px;
+            text-align: center;
+            box-sizing: border-box;
+            transform: translate(-50%, 0);
+            -webkit-transform: translate(-50%, 0);
+        }
+        
+        .payPwd-box h4 {
+            font-size: 16px;
+            font-weight: normal;
+        }
+        
+        .payPwd-box strong {
+            display: block;
+            font-size: 28px;
+            text-align: center;
+            padding: 10px 0;
+        }
+        
+        .payPwd-box strong span {
+            font-size: 18px;
+        }
+        
+        .pwd-label {
+            display: block;
+            padding: 0 10px;
+            height: 40px;
+        }
+        
+        .pwd-label input[type="tel"] {
+            opacity: 0;
+            width: 1px;
+            height: 1px;
+        }
+        
+        .item-input {
+            height: 38px;
+            border: 1px solid #CCC;
+            font-size: 0;
+            background-color: #fff;
+        }
+        
+        .item-input span {
+            border-left: 1px solid #ccc;
+            text-align: center;
+            line-height: 46px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        .item-input span:first-child {
+            border-left: none;
         }
     </style>
 </head>
@@ -90,18 +180,19 @@
                 </li>
                 <li class="list-item flex-wrap">
                     <div class="inner">
-                        <strong style="font-size:40px;">￥</strong>
+                        <strong style="font-size:40px;color:#666;">￥</strong>
                     </div>
                     <div class="right">
-                        <p class="">可用奖金 ¥109.00</p>
+                        <input type="tel" ref="output_val_input" :value="outPrice" @input="listenPriceInput" @blur="listenPriceBlur" :placeholder="placeholderTxt" class="flex-con outputInput" />
+                        <!-- <p class=""></p> -->
                     </div>
                 </li>
-                <li class="list-item flex-wrap">
+                <li class="list-item flex-wrap" @click="showPopup">
                     <div class="inner">
                         <p>提现方式</p>
                     </div>
                     <div class="right">
-                        <p>微信现金红包</p>
+                        <p>{{outPutTypeTxt}}</p>
                     </div>
                     <div class="arrow-right"></div>
                 </li>
@@ -110,12 +201,36 @@
                         <p>提现账号</p>
                     </div>
                     <div class="right">
-                        <p>农业银行（3834）</p>
+                        <p>{{account}}</p>
                     </div>
                     <div class="arrow-right"></div>
                 </li>
             </ul>
+            <div class="other-box">
+                <button type="button" @click="showPwdBox" class="bg-blue">确定提现</button>
+            </div>
 
+            <van-popup v-model="isShowPop" position="bottom">
+                <van-picker :columns="columns" @cancel="onCancelPop" @confirm="onConfirmOutPut" show-toolbar></van-picker>
+            </van-popup>
+
+        </div>
+        <div class="payPwd-box" v-show="isShowPayDialog">
+            <div class="content">
+                <h4>新增提现账户</h4>
+                <div class="space-bar">请输入支付密码，以验证身份</div>
+                <label for="pwd" class="pwd-label">
+                      <div class="item-input flex-wrap">
+                        <span class="flex-con">{{pwd[0]?'*':''}}</span>
+                        <span class="flex-con">{{pwd[1]?'*':''}}</span>
+                        <span class="flex-con">{{pwd[2]?'*':''}}</span>
+                        <span class="flex-con">{{pwd[3]?'*':''}}</span>
+                        <span class="flex-con">{{pwd[4]?'*':''}}</span>
+                        <span class="flex-con">{{pwd[5]?'*':''}}</span>
+                      </div>
+                      <input type="tel" id="pwd" ref="payIpu" maxlength="6" v-model="pwd" />
+                  </label>
+            </div>
         </div>
 
 
@@ -128,13 +243,59 @@
 <script type="text/javascript">
     var frmVm = new Vue({
         el: '#app',
-        data: {},
-        watch: {},
-        created: function() {},
+        data: {
+            placeholderTxt: '',
+            outPrice: '',
+            surplusPrice: 106.00,
+            outPutTypeTxt: '微信现金',
+            account: '农业银行(3881)',
+            isShowPop: false,
+            columns: ['微信现金提现', '银行卡提现'],
+            isShowPayDialog: false,
+            pwd: ''
+        },
+        watch: {
+            pwd: function(val) {
+                if (val.length === 6) {
+                    // $.ajax({
+                    //     url: '',
+                    //     method: 'post',
+                    //     data: {}
+                    // })
+                    location.replace('./outputList.html')
+                }
+            }
+        },
+        created: function() {
+            this.placeholderTxt = '可用奖金 ¥' + this.surplusPrice
+        },
         mounted: function() {},
         computed: {},
         methods: {
-
+            listenPriceInput: function(ev) {
+                var val = ev.target.value.replace(/^(\.|0)/, '').replace(/(\d+\.\d{2})(\d+)/g, '$1')
+                if (parseInt(val) > parseInt(this.surplusPrice)) {
+                    this.$toast('提现金额不能大于可用余额!');
+                }
+                this.outPrice = val
+            },
+            showPopup: function() {
+                this.isShowPop = true
+            },
+            listenPriceBlur: function() {
+                var val = this.outPrice.replace(/\D/g, '')
+                this.outPrice = val
+            },
+            onCancelPop: function() {
+                this.isShowPop = false
+            },
+            onConfirmOutPut: function(value, index) {
+                this.outPutTypeTxt = value
+                this.isShowPop = false
+            },
+            showPwdBox: function() {
+                this.isShowPayDialog = true
+            }
         }
     })
 </script>

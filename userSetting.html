@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>用户设置</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./css/vant.css" />
+    <style>
+        body {
+            height: auto;
+            min-height: 100%;
+        }
+        
+        #app {
+            position: relative;
+        }
+        
+        .main {}
+        
+        .ad-box {
+            min-height: 90px;
+            position: relative;
+        }
+        
+        .list-box {
+            padding-left: 10px;
+        }
+        
+        .list-box li {
+            padding: 13px 10px 13px 0;
+            border-bottom: 1px solid #F2F2F2;
+        }
+        
+        .list-box li a {
+            align-items: center;
+        }
+        
+        .list-box .inner {
+            width: 80px;
+            overflow: hidden;
+        }
+        
+        .list-box .inner h5 {
+            color: #333333;
+            font-size: 14px;
+            font-weight: normal;
+        }
+        
+        .list-box .right {
+            margin-right: 10px;
+        }
+        
+        .list-box .right button {
+            padding: 0px 8px;
+            border-radius: 5px;
+            border: 1px solid #D7D7D7;
+        }
+        
+        .avator-box {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 10;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="ad-box">
+            <img src="./image/store-ad.jpg" width="100%" height="100%" alt="">
+            <div class="avator-box"><img src="./image/user_prize_default@2x.png" width="100%" height="100%" alt=""></div>
+        </div>
+        <header class="isFixed" style="background:transparent;">
+            <div class="content ">
+                <div class="bar-left" onclick="history.back();">
+                    <van-icon name="arrow-left" size="20px"></van-icon>
+                </div>
+                <div class="title "></div>
+                <div class="bar-right"></div>
+            </div>
+        </header>
+
+        <div class="main">
+
+            <ul class="list-box">
+                <li class="list-item flex-wrap">
+                    <div class="inner ">
+                        <h5>昵称</h5>
+                    </div>
+                    <div class="content flex-con">
+                        <p>美好事物</p>
+                    </div>
+                    <div class="right"></div>
+                </li>
+                <li class="list-item flex-wrap">
+                    <div class="inner ">
+                        <h5>绑定手机</h5>
+                    </div>
+                    <div class="content flex-con">
+                        <p>1851381381111</p>
+                    </div>
+                    <div class="right">
+
+                    </div>
+                </li>
+                <li class="list-item flex-wrap">
+                    <div class="inner ">
+                        <h5>修改密码</h5>
+                    </div>
+                    <div class="content flex-con">
+                        <p>******</p>
+                    </div>
+                    <div class="right">
+                        <button type="button" @click="modiflyPwd">修改</button>
+                    </div>
+                </li>
+                <li class="list-item flex-wrap">
+                    <div class="inner ">
+                        <h5>绑定银行卡</h5>
+                    </div>
+                    <div class="content flex-con">
+                        <p>中国银行（6534）</p>
+                    </div>
+                    <div class="right">
+                        <button type="button" @click="modiflyCard">修改</button>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+
+
+    </div>
+</body>
+<script src="./script/base.js"></script>
+<script src="./script/vue.js"></script>
+<script src="./script/vant.js"></script>
+<script src="./script/zepto.js"></script>
+<script type="text/javascript">
+    var frmVm = new Vue({
+        el: '#app',
+        data: {},
+        watch: {},
+        created: function() {},
+        mounted: function() {},
+        computed: {},
+        methods: {
+            modiflyPwd: function() {
+                location.href = './modiflyPwd.html'
+            },
+            modiflyCard: function() {
+                location.href = './modiflyCard.html'
+            }
+        }
+    })
+</script>
+
+</html>

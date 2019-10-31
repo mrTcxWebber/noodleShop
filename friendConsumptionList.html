@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
-    <title>余额详情</title>
+    <title>好友消费列表</title>
     <link rel="stylesheet" type="text/css" href="./css/reset.css" />
     <link rel="stylesheet" type="text/css" href="./css/vant.css" />
     <style>
@@ -26,9 +26,6 @@
         .list-box li {
             padding: 8px 10px 8px 0;
             border-bottom: 1px solid #F2F2F2;
-            min-height: 60px;
-            align-items: center;
-            box-sizing: border-box;
         }
         
         .list-box li a {
@@ -40,7 +37,6 @@
         }
         
         .list-box .inner {
-            color: #666666;
             overflow: hidden;
         }
         
@@ -51,11 +47,6 @@
         }
         
         .list-box .right {}
-        
-        .list-box .right p {
-            color: #333333;
-            text-align: right;
-        }
     </style>
 </head>
 
@@ -66,7 +57,7 @@
                 <div class="bar-left" onclick="history.back();">
                     <van-icon name="arrow-left" size="20px"></van-icon>
                 </div>
-                <div class="title ">余额详情</div>
+                <div class="title ">好友消费</div>
                 <div class="bar-right"></div>
             </div>
         </header>
@@ -74,29 +65,14 @@
         <div class="main">
 
             <ul class="list-box">
-                <li class="list-item flex-wrap">
-                    <div class="inner flex-con">
-                        <p>余额提现</p>
-                    </div>
-                    <div class="right"><span>-19.50</span></div>
-                </li>
-                <li class="list-item flex-wrap">
-                    <div class="inner flex-con">
-                        <p>类型</p>
-                        <p>时间</p>
-                        <p>交易单号</p>
-                    </div>
-                    <div class="right">
-                        <p class="color-blank">余额奖励</p>
-                        <p class="color-blank">2018-05-19 15:05:32</p>
-                        <p class="color-blank">2018051915053254564652</p>
-                    </div>
-                </li>
-                <li class="list-item flex-wrap">
-                    <div class="inner flex-con">
-                        <p>当前可用余额</p>
-                    </div>
-                    <div class="right"><span class="color-blue">200.00</span></div>
+                <li class="list-item">
+                    <a href="javascript:;" class="flex-wrap">
+                        <div class="inner flex-con">
+                            <h5>订单编号：7284372483647436</h5>
+                            <div class="time">2018-05-19 13：21：06</div>
+                        </div>
+                        <div class="right"><span class="color-blue">+100.00</span></div>
+                    </a>
                 </li>
             </ul>
 
